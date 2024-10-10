@@ -105,7 +105,7 @@ func allocConfig(network netconf.ID, prefunds types.GenesisAlloc) (bindings.Allo
 	}
 
 	return bindings.AllocPredeploysConfig{
-		Admin:                  eoa.MustAddress(network, eoa.RoleAdmin),
+		Admin:                  eoa.MustAddress(network, eoa.RoleManager),
 		ChainId:                new(big.Int).SetUint64(network.Static().OmniExecutionChainID),
 		EnableStakingAllowlist: network.IsProtected(),
 		NativeBridgeBalance:    nativeBridgeBalance,
