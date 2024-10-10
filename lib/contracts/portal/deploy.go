@@ -20,7 +20,7 @@ type deploymentConfig struct {
 	Create3Salt           string
 	ProxyAdminOwner       common.Address
 	Deployer              common.Address
-	Manager               common.Address
+	Owner                 common.Address
 	OmniChainID           uint64
 	OmniCChainID          uint64
 	XMsgMinGasLimit       uint64
@@ -70,7 +70,7 @@ func (cfg deploymentConfig) Validate() error {
 	if isDeadOrEmpty(cfg.Deployer) {
 		return errors.New("deployer is not set")
 	}
-	if isDeadOrEmpty(cfg.Manager) {
+	if isDeadOrEmpty(cfg.Owner) {
 		return errors.New("owner is not set")
 	}
 	if cfg.XMsgMinGasLimit == 0 {
@@ -141,7 +141,7 @@ func Deploy(ctx context.Context, network netconf.ID, backend *ethbackend.Backend
 	cfg := deploymentConfig{
 		Create3Factory:        addrs.Create3Factory,
 		Create3Salt:           salts.Portal,
-		Manager:               eoa.MustAddress(network, eoa.RoleManager),
+		Owner:                 eoa.MustAddress(network, eoa.RoleManager),
 		Deployer:              eoa.MustAddress(network, eoa.RoleDeployer),
 		ProxyAdminOwner:       eoa.MustAddress(network, eoa.RoleUpgrader),
 		OmniChainID:           network.Static().OmniExecutionChainID,
@@ -226,7 +226,7 @@ func packInitCode(cfg deploymentConfig, feeOracle common.Address, impl common.Ad
 
 	initializer, err := portalAbi.Pack("initialize",
 		&bindings.OmniPortalInitParams{
-			Owner:                cfg.Manager,
+			Owner:                cfg.Owner,
 			FeeOracle:            feeOracle,
 			OmniChainId:          cfg.OmniChainID,
 			OmniCChainId:         cfg.OmniCChainID,

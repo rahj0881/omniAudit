@@ -19,7 +19,7 @@ type DeploymentConfig struct {
 	Create3Factory  common.Address
 	Create3Salt     string
 	ProxyAdminOwner common.Address
-	Manager         common.Address
+	Owner           common.Address
 	Deployer        common.Address
 	Portal          common.Address
 	ExpectedAddr    common.Address
@@ -42,7 +42,7 @@ func (cfg DeploymentConfig) Validate() error {
 	if isDeadOrEmpty(cfg.Deployer) {
 		return errors.New("deployer is not set")
 	}
-	if isDeadOrEmpty(cfg.Manager) {
+	if isDeadOrEmpty(cfg.Owner) {
 		return errors.New("owner is not set")
 	}
 	if (cfg.Portal == common.Address{}) {
@@ -113,7 +113,7 @@ func Deploy(
 	cfg := DeploymentConfig{
 		Create3Factory:  addrs.Create3Factory,
 		Create3Salt:     salts.GasStation,
-		Manager:         eoa.MustAddress(network, eoa.RoleManager),
+		Owner:           eoa.MustAddress(network, eoa.RoleManager),
 		Deployer:        eoa.MustAddress(network, eoa.RoleDeployer),
 		ProxyAdminOwner: eoa.MustAddress(network, eoa.RoleUpgrader),
 		Portal:          addrs.Portal,
@@ -201,7 +201,7 @@ func packInitCode(cfg DeploymentConfig, impl common.Address, gasPumps []bindings
 		return nil, errors.Wrap(err, "get proxy abi")
 	}
 
-	initializer, err := gasStationAbi.Pack("initialize", cfg.Portal, cfg.Manager, gasPumps)
+	initializer, err := gasStationAbi.Pack("initialize", cfg.Portal, cfg.Owner, gasPumps)
 	if err != nil {
 		return nil, errors.Wrap(err, "encode initializer")
 	}
