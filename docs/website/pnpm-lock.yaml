@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^3.5.1
     version: 3.5.1(@types/react@18.3.11)(react-dom@18.3.1)(react@18.3.1)(typescript@5.2.2)
   '@docusaurus/tsconfig':
-    specifier: 3.3.2
-    version: 3.3.2
+    specifier: 3.6.2
+    version: 3.6.2
   '@docusaurus/types':
     specifier: 3.2.1
     version: 3.2.1(react-dom@18.3.1)(react@18.3.1)
@@ -1831,7 +1831,7 @@ packages:
       '@docusaurus/react-loadable': 5.5.2(react@18.3.1)
       '@docusaurus/types': 3.2.1(react-dom@18.3.1)(react@18.3.1)
       '@types/history': 4.7.11
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
       '@types/react-router-config': 5.0.11
       '@types/react-router-dom': 5.3.3
       react: 18.3.1
@@ -1877,7 +1877,7 @@ packages:
     dependencies:
       '@docusaurus/types': 3.5.1(react-dom@18.3.1)(react@18.3.1)
       '@types/history': 4.7.11
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
       '@types/react-router-config': 5.0.11
       '@types/react-router-dom': 5.3.3
       react: 18.3.1
@@ -2373,7 +2373,7 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
       react: 18.3.1
     dev: true
 
@@ -2543,7 +2543,7 @@ packages:
       '@docusaurus/utils': 3.5.1(@docusaurus/types@3.5.1)(typescript@5.2.2)
       '@docusaurus/utils-common': 3.5.1(@docusaurus/types@3.5.1)
       '@types/history': 4.7.11
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
       '@types/react-router-config': 5.0.11
       clsx: 2.1.1
       parse-numeric-range: 1.3.0
@@ -2626,8 +2626,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@docusaurus/tsconfig@3.3.2:
-    resolution: {integrity: sha512-2MQXkLoWqgOSiqFojNEq8iPtFBHGQqd1b/SQMoe+v3GgHmk/L6YTTO/hMcHhWb1hTFmbkei++IajSfD3RlZKvw==}
+  /@docusaurus/tsconfig@3.6.2:
+    resolution: {integrity: sha512-TWLkyYHBYhIJNcXCEc3D1M9R8UFV4IZ82rGef5U9mE1ZrcgDUlZxYaYdoSuHrPrzPRIl3orjmpscO2FAk2gdZw==}
     dev: true
 
   /@docusaurus/types@3.2.1(react-dom@18.3.1)(react@18.3.1):
@@ -2687,7 +2687,7 @@ packages:
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/history': 4.7.11
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
       commander: 5.1.0
       joi: 17.13.1
       react: 18.3.1
@@ -3492,7 +3492,7 @@ packages:
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.3
+      '@types/react': 18.3.11
 
   /@types/react@18.3.11:
     resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
